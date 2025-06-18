@@ -1,0 +1,18 @@
+spring:
+  ai:
+    openai:
+      chat:
+        base-url: https://generativelanguage.googleapis.com
+        completions-path: /v1beta/chat/completions
+        options:
+          model: gemini-2.0-flash
+      api-key: ############################
+
+gemini:
+  api:
+    connection-timeout: 5000
+    read-timeout: 5000       
+server:
+  port: 8090
+  servlet:
+    context-path: /api
