@@ -1,4 +1,4 @@
-package com.zeta.ai.zeta_ai.application.dtos;
+package com.zeta.ai.zeta_ai.modules.conversation.dtos;
 
 import java.util.UUID;
 
