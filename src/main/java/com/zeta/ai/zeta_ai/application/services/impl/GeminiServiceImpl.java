@@ -38,10 +38,13 @@ public class GeminiServiceImpl implements IGeminiService {
 
         content.append("Sempre cumprimente o cliente \n\n");
 
+        content.append("Caso não tenha nenhum carro na lista de carros. Diga que está sem carros no momento. \n\n");
+
+
         
         content.append(" aqui temos uma lista de carros: \\n");
         for (Car car : cars) {
-            content.append(car.getName() + " - " + car.getPreco()).append("\n");
+            content.append(car.getName() + " - " + car.getPrice()).append("\n");
         }
 
         content.append("Sempre baseado no envio do cliente, tente sugerir um ou alguns carros que fazem sentido pra situação de vida atual do prompt do cliente. \n\n Cliente: " + chatMessage);

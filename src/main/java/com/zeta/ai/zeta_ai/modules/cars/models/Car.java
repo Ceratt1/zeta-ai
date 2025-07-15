@@ -21,5 +21,5 @@ public class Car extends BaseEntity  {
     private String name;
 
     @Column(nullable = false)
-    private BigDecimal preco;
+    private BigDecimal price;
 }

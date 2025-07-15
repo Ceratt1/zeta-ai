@@ -17,6 +17,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "conversation_history")
 @AllArgsConstructor
+@NoArgsConstructor
 public class ConversationHistory extends BaseEntity{
     
     @Column(nullable = false)

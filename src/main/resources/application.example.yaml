@@ -1,4 +1,25 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /api
+
 spring:
+  datasource:
+    username: postgres
+    password: root
+    url: jdbc:postgresql://localhost:5453/zeta_ai
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      connection-timeout: 30000
+      pool-name: HikariCP
+      auto-commit: true
+      register-mbeans: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
   ai:
     openai:
       chat:
@@ -6,13 +27,9 @@ spring:
         completions-path: /v1beta/chat/completions
         options:
           model: gemini-2.0-flash
-      api-key: ############################
+      api-key: ###############################3
 
 gemini:
   api:
     connection-timeout: 5000
-    read-timeout: 5000       
-server:
-  port: 8090
-  servlet:
-    context-path: /api
+    read-timeout: 5000

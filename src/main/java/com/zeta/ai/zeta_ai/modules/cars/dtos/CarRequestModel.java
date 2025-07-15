@@ -13,5 +13,5 @@ public class CarRequestModel {
     @NotNull
     private String name;
     @NotNull
-    private BigDecimal preco;
+    private BigDecimal price;
 }

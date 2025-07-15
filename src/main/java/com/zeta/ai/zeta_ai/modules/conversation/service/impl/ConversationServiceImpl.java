@@ -1,6 +1,5 @@
 package com.zeta.ai.zeta_ai.modules.conversation.service.impl;
 
-import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
@@ -14,17 +13,21 @@ public class ConversationServiceImpl implements IConversationService {
 
     private  IGeminiService geminiService;
 
-    private IConversationHistoryRepository conversationHistoryRepository;
+    private IConversationHistoryRepository repository;
 
 
-    public ConversationServiceImpl(IGeminiService geminiService) {
+    public ConversationServiceImpl(IGeminiService geminiService, IConversationHistoryRepository conversationHistoryRepository) {
         this.geminiService = geminiService;
+        this.repository = conversationHistoryRepository;
     }
+
+
+
 
     @Override
     public String conversation(ConversationHistory conversationHistory) {
 
-        conversationHistoryRepository.save(conversationHistory);
+        // repository.save(conversationHistory);
 
         return geminiService.conversation(conversationHistory.getContent());
     }

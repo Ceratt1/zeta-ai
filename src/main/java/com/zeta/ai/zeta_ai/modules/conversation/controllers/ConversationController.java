@@ -10,8 +10,6 @@ import com.zeta.ai.zeta_ai.modules.conversation.service.IConversationService;
 
 import jakarta.validation.Valid;
 
-import java.util.UUID;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,6 +35,7 @@ public class ConversationController {
     @ResponseStatus(HttpStatus.OK)
     public PromptResponseModel conversation(@RequestBody @Valid PromptRequestModel request) {
 
+        System.out.println("Received conversation request: " + request.getUuid());
         ConversationHistory conversation = mapper.map(request, ConversationHistory.class);
 
         String content = service.conversation(conversation);
