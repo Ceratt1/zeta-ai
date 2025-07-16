@@ -1,4 +1,16 @@
 services:
+  app:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/zeta_ai
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: root
+    ports:
+      - "8090:8090"
+    restart: unless-stopped
+
   postgres:
     image: 'postgres:latest'
     environment:
@@ -7,4 +19,4 @@ services:
       - 'POSTGRES_USER=postgres'
     ports:
       - "5453:5432"
-
+    restart: unless-stopped
