@@ -1,0 +1,57 @@
+spring:
+  ai:
+    openai:
+      chat:
+        base-url: https://generativelanguage.googleapis.com
+        completions-path: /v1beta/chat/completions
+        options:
+          model: gemini-2.0-flash
+      api-key: AIzaSyDKde3P7Y1XXeqAPn5esYI6E8WOa3KvYqI
+
+  datasource:
+    url: jdbc:postgresql://localhost:5453/zeta_ai
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 10
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: HikariPool-1
+      max-lifetime: 1800000
+      connection-timeout: 30000
+  docker:
+    compose:
+      enabled: false
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+gemini:
+  api:
+    connection-timeout: 5000
+    read-timeout: 5000       
+
+server:
+  port: 8090
+  servlet:
+    context-path: /api
+
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger
+    enabled: true
+
+logging:
+  level:
+    org.springdoc: DEBUG
+
+cors: true
+
+
